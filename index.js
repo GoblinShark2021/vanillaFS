@@ -1,17 +1,25 @@
-let body = document.querySelector("body");
+/* eslint-disable no-undef */
+const body = document.querySelector('body');
 
-const colorClick = document.createElement("button");
-colorClick.innerHTML = "Cycle Colors!";
-colorClick.setAttribute("id", "colorBtn");
+const colorClick = document.createElement('button');
+colorClick.innerHTML = 'Cycle Colors!';
+colorClick.setAttribute('id', 'colorBtn');
 body.appendChild(colorClick);
 
-const colors = ["blue", "green", "yellow", "purple", "cyan"];
-
-let yoText = document.getElementById("yo");
+const colors = ['blue', 'green', 'yellow', 'purple', 'cyan'];
+const yoText = document.getElementById('yo');
+let index = 0;
 
 const cycle = () => {
-  let currentColor = 0;
-  return (changeColor = yoText.style.color = "blue");
+  if(index > colors.length - 1){
+    index = 0;
+  }
+  yoText.style.color = colors[index];
+  index++;
+  return;
 };
 
-document.getElementById("colorBtn").addEventListener("click", cycle);
+
+document
+  .getElementById('colorBtn')
+  .addEventListener('click', cycle);
