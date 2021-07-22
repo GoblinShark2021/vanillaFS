@@ -7,6 +7,7 @@ body {
 
 button {
   width: 300px;
+  border-radius: 10px;
   background-color: white;
   font-size: 16px;
 }
