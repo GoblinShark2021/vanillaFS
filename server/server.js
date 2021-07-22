@@ -1,8 +1,18 @@
 const express = require('express');
 const path = require('path');
+const mongoose = require('mongoose');
 
 const app = express();
 const PORT = 3000;
+
+//setting up mongo db
+const URI = '';
+
+mongoose.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true });
+
+mongoose.connection.once('open', () => {
+  console.log('MongoDB connected fam!');
+});
 
 //middleware
 app.use(express.json());

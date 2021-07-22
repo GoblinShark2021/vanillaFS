@@ -10,6 +10,9 @@ body.appendChild(clickBtn).innerHTML = 'Change Sponge Size';
 const backendBtn = document.createElement('button');
 body.appendChild(backendBtn).innerHTML = 'Backend Tester';
 
+// input submit button
+const form = document.getElementById('taskForm');
+
 //to do list items
 const todoItem = document.createElement('li');
 const editBtn = document.createElement('button');
@@ -52,3 +55,8 @@ backendBtn.addEventListener('click', beTest);
 editBtn.addEventListener('click', console.log('edited'));
 deleteBtn.addEventListener('click', console.log('deleted'));
 completeBtn.addEventListener('click', console.log('completed'));
+form.addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    console.log(e.target.value);
+  }
+});
