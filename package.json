@@ -4,7 +4,7 @@
   "description": "Vanilla CRUD Practice",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon run server.js",
+    "start": "nodemon run server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +20,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "express": "^4.17.1",
+    "mongodb": "^4.0.1",
     "mongoose": "^5.13.3",
     "nodemon": "^2.0.12"
   }

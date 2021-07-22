@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 
 //set a variable equal to the body
+
 const body = document.querySelector('body');
 //spongebob button
 const clickBtn = document.createElement('button');
