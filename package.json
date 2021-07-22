@@ -4,6 +4,7 @@
   "description": "Vanilla CRUD Practice",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon run server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/GoblinShark2021/vanillaFS/issues"
   },
-  "homepage": "https://github.com/GoblinShark2021/vanillaFS#readme"
+  "homepage": "https://github.com/GoblinShark2021/vanillaFS#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "express": "^4.17.1"
+  }
 }
