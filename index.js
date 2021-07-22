@@ -23,6 +23,9 @@ function beTest() {
     .get('/test')
     .then((res) => {
       console.log('talkin 2 tha back', res.data);
+      const backendDiv = document.createElement('h1');
+      console.log(res);
+      body.appendChild(backendDiv).innerHTML = `${res.data}`;
     })
     .catch((error) => {
       console.log('error:', error);
