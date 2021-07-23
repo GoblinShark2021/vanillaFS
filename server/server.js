@@ -6,6 +6,8 @@ const apiRouter = require("./routes/api.js");
 const app = express();
 const PORT = 3000;
 
+const userController = require("./controllers/user");
+
 app.use(express.json());
 
 // Parses incoming requests with urlencoded payloads
@@ -38,6 +40,13 @@ app.use("/api", apiRouter); //
 //   console.log("good request");
 //   res.status(200).send("You on the backend playa");
 // });
+
+app.post("/login", userController.verifyUser, (req, res) => {
+  if (res.locals === "good") {
+    res.redirect("/");
+  }
+  res.send();
+});
 
 //root get request
 app.get("/", function (req, res) {

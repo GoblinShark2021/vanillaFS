@@ -4,36 +4,15 @@
 
 const body = document.querySelector("body");
 //spongebob button
-const clickBtn = document.createElement("button");
-body.appendChild(clickBtn).innerHTML = "Clear Tasks";
+// const clickBtn = document.createElement("button");
+// body.appendChild(clickBtn).innerHTML = "Clear Tasks";
 
 //backend testing button
-const backendBtn = document.createElement("button");
-body.appendChild(backendBtn).innerHTML = "Load Tasks";
+const loadTasksBtn = document.createElement("button");
+body.appendChild(loadTasksBtn).innerHTML = "Load Tasks";
 
 // input submit button
 const form = document.getElementById("taskForm");
-
-//to do list items
-// const todoItem = document.createElement("li");
-// const editBtn = document.createElement("button");
-// editBtn.innerHTML = "✍️";
-// const deleteBtn = document.createElement("button");
-// deleteBtn.innerHTML = "❌";
-// const completeBtn = document.createElement("button");
-// completeBtn.innerHTML = "✅";
-// document.getElementById("toDoList").appendChild(todoItem);
-// todoItem.appendChild(editBtn);
-// todoItem.appendChild(deleteBtn);
-// todoItem.appendChild(completeBtn);
-
-//functions for our scripts
-function changeSize(i) {
-  console.log("spongebob has shrunk");
-  document.getElementById("spongebob").style.height = `${
-    Math.random() * 1000
-  }px`;
-}
 
 function beTest() {
   axios
@@ -58,27 +37,27 @@ function addTask(e) {
       },
     })
     .then((res) => {
-      console.log("the response", res);
+      console.log("the add response", res.data.task);
+      const taskName = res.data.task;
     });
 }
 
+let taskCount = 0;
+
 function getTasks(e) {
-  e.preventDefault();
+  taskCount++;
+  // e.preventDefault();
   axios.get("/api/getAllTasks").then((res) => {
     const dataArr = res.data;
     const taskArray = [];
     dataArr.map((i) => taskArray.push(i.task));
     console.log(taskArray);
-    //erics scheme
-    taskArray.forEach((el) => {
-      //BUTTONS
 
-      // TODO ITEMS
+    taskArray.forEach((el) => {
       const todoItem = document.createElement("li");
       todoItem.setAttribute("id", `todo${el}`);
       todoItem.innerHTML = `${el}`;
 
-      // APPENDING TO DOCUMENT ID - TODOLIST
       const toDo = document.getElementById("toDoList");
       toDo.appendChild(todoItem);
 
@@ -96,33 +75,30 @@ function getTasks(e) {
       todoItem.appendChild(deleteBtn);
       todoItem.appendChild(completeBtn);
     });
-    //end of erics scheme
   });
 }
 
 function deleteTask(id) {
-  const url = "/api/deleteTask";
-  console.log(id);
-
   axios
-    .delete(url, {
+    .delete("/api/deleteTask", {
       data: {
         task: id,
       },
     })
-    .then((res) => console.log("RES.DATA IN DELETE FUNCTION: ", res.data));
+    .then((res) => console.log("Successfully Deleted ---> ", res.data));
 }
 
-//event listeners
-clickBtn.addEventListener("click", changeSize);
-backendBtn.addEventListener("click", getTasks);
-// editBtn.addEventListener("click", console.log("edited"));
+//loadTasksBtn.addEventListener("click", getTasks);
 
-//completeBtn.addEventListener("click", console.log("completed"));
+loadTasksBtn.addEventListener("click", () => {
+  if (taskCount === 0) {
+    getTasks();
+  }
+});
 
 form.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
     addTask(e.target.value);
-    // getTasks();
+    getTasks();
   }
 });
