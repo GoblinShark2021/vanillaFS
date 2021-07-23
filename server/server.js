@@ -6,6 +6,11 @@ const apiRouter = require("./routes/api.js");
 const app = express();
 const PORT = 3000;
 
+app.use(express.json());
+
+// Parses incoming requests with urlencoded payloads
+app.use(express.urlencoded({ extended: true }));
+
 //setting up mongo db
 const URI =
   "mongodb+srv://mongoboys:12345@cluster0.xeqlo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";

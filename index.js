@@ -85,9 +85,9 @@ function getTasks(e) {
       const deleteBtn = document.createElement("button");
       deleteBtn.setAttribute("id", el);
       deleteBtn.innerHTML = "❌";
-      deleteBtn.addEventListener("click", () => {
+      deleteBtn.addEventListener("click", async () => {
+        await deleteTask(el);
         document.getElementById(`todo${el}`).remove();
-        deleteTask(el);
       });
 
       const completeBtn = document.createElement("button");
@@ -101,18 +101,17 @@ function getTasks(e) {
 }
 
 function deleteTask(id) {
-  console.log("in the delete function", `Element is ${id}`);
+  const url = "/api/deleteTask";
+  console.log(id);
 
   axios
-    .delete("/api/deleteTask", {
+    .delete(url, {
       data: {
         task: id,
       },
     })
-    .then((res) => console.log("you deleted some shit."));
+    .then((res) => console.log("RES.DATA IN DELETE FUNCTION: ", res.data));
 }
-
-//console.log("this is the task ", res.data[0].task);
 
 //event listeners
 clickBtn.addEventListener("click", changeSize);
