@@ -1,12 +1,13 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const taskController = require('../controllers/tasks');
+const taskController = require("../controllers/tasks");
 
-// eventually call in controllers
+router.post("/createTask", taskController.createTask, (req, res) => {
+  res.status(200).send(console.log(res.locals.task));
+});
 
-// router.get('/getTasks', taskController .getTasks, (req, res) => {
-//   // route for getting all taks from the db
-//   res.status(200).json(res.tasks);
-// });
+router.get("/getAllTasks", taskController.getAllTasks, (req, res) => {
+  res.status(200).send(res.locals);
+});
 
 module.exports = router;

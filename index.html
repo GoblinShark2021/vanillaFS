@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equ iv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equ iv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet"  type="text/css" href="style.css">
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <title>Document</title>
-</head>
-
-<body>
-  <div id="mainDiv">
-    <img src="https://cdn.thingiverse.com/assets/d1/10/1b/45/16/featured_preview_bien_opt.png" alt="" id="spongebob" >
-    <h1>To Do List </h1>
-    <div>
-      <input id="taskForm" type="form" placeholder="What do you need to do today?">
-    </div>
-    <div>
-      <button id="submitTask" class="submitTask">Submit</button>
-      <button class="clearForm">Clear Form</button>
-    </div>
-    <ul id="toDoList">
-      <li>Example Todo Item: "Stack paper...." <button id="edit">✍️</button> <button id="delete">❌</button><button id="complete">✅</button></li>
+  <body>
+    <div id="mainDiv">
+      <img
+        src="https://cdn.thingiverse.com/assets/d1/10/1b/45/16/featured_preview_bien_opt.png"
+        alt=""
+        id="spongebob"
+      />
+      <h1>To Do List</h1>
+      <div>
+        <input
+          id="taskForm"
+          type="form"
+          placeholder="What do you need to do today?"
+        />
+      </div>
+      <div>
+        <button id="submitTask" class="submitTask">Submit</button>
+        <button class="clearForm">Clear Form</button>
+      </div>
+      <ul id="toDoList">
+        <!-- <li>Example Todo Item: "Stack paper...." <button id="edit">✍️</button> <button id="delete">❌</button><button id="complete">✅</button></li>
       <li>Example Todo Item: "Chill w/ Patrick...." <button id="edit">✍️</button> <button id="delete">❌</button><button id="complete">✅</button></li>
-      <li>Example Todo Item: "Write a rec for Eric :(...." <button id="edit">✍️</button> <button id="delete">❌</button><button id="complete">✅</button></li>
+      <li>Example Todo Item: "Write a rec for Eric :(...." <button id="edit">✍️</button> <button id="delete">❌</button><button id="complete">✅</button></li> -->
+      </ul>
+    </div>
 
-    </ul>
-  </div>
-
-  
-  <br>
-  <script src="index.js" type="module"></script>
-</body>
-
+    <br />
+    <script src="index.js" type="module"></script>
+  </body>
 </html>
-
