@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap");
 
 body {
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-size: 24px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
   text-align: center;
 }
-input{
+input {
   width: 30%;
   padding: 10px;
   border-radius: 5px;
@@ -18,7 +18,9 @@ button {
   max-width: 150px;
   padding: 5px;
   border-radius: 10px;
-  background-color: rgb(230, 230, 230);
+  /* background-color: rgb(230, 230, 230); */
+  background-color: #1e6a35;
+  color: #f9ed92;
   font-size: 16px;
   border: none;
   margin-bottom: 10px;
@@ -26,20 +28,17 @@ button {
 }
 
 button:hover {
-  background-color: blue;
+  background-color: #f9ed92;
   color: white;
 }
 
 #spongebob {
-  height: 150px
-
+  height: 150px;
 }
-
 
 li {
   list-style: none;
 }
-
 
 #mainDiv {
   border: solid black 1px;
@@ -54,10 +53,8 @@ li {
   text-align: center;
   padding: 5px;
   border-bottom: 1px solid black;
-  
 }
 
 /* #mainDiv ul button {
   float: right;
 } */
-

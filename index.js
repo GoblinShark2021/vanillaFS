@@ -5,7 +5,7 @@
 const body = document.querySelector("body");
 //spongebob button
 const clickBtn = document.createElement("button");
-body.appendChild(clickBtn).innerHTML = "Change Sponge Size";
+body.appendChild(clickBtn).innerHTML = "Clear Tasks";
 
 //backend testing button
 const backendBtn = document.createElement("button");
